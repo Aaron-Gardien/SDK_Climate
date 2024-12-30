@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<functions>
+
+	<category name="Thermostat - Control" condition="len $StatName001">
+		<function name="Operating Mode" export="SetOPMode" repeatrate="0">
+			<parameter name="Thermostat" type="mcinteger" default="1" >
+				<choice name="%%StatName001%% (Stat 1)" condition="len $StatName001" sourceid="Stat1" value="1"/>
+				<choice name="%%StatName002%% (Stat 2)" condition="len $StatName002" sourceid="Stat2" value="2"/>
+				<choice name="%%StatName003%% (Stat 3)" condition="len $StatName003" sourceid="Stat3" value="3"/>
+				<choice name="%%StatName004%% (Stat 4)" condition="len $StatName004" sourceid="Stat4" value="4"/>
+				<choice name="%%StatName005%% (Stat 5)" condition="len $StatName005" sourceid="Stat5" value="5"/>
+				<choice name="%%StatName006%% (Stat 6)" condition="len $StatName006" sourceid="Stat6" value="6"/>
+			</parameter>
+			<parameter name="Mode" type="mcstring" default="Toggle">
+				<choice name="Toggle" value="Toggle" buttontag="Stat Mode"/>
+				<choice name="Off" value="Off" buttontag="Stat Off"/>
+				<choice name="Heat" value="Heat" buttontag="Stat Heat"/>
+				<choice name="Cool" value="Cool" buttontag="Stat Cool"/>
+				<choice name="Auto" value="Auto" buttontag="Stat Auto"/>
+			</parameter>
+		</function>
+
+		<function name="Fan Mode" export="SetFanMode" repeatrate="0">
+			<parameter name="Thermostat" type="mcinteger" default="1" >
+				<choice name="%%StatName001%% (Stat 1)" condition="len $StatName001" sourceid="Stat1" value="1"/>
+				<choice name="%%StatName002%% (Stat 2)" condition="len $StatName002" sourceid="Stat2" value="2"/>
+				<choice name="%%StatName003%% (Stat 3)" condition="len $StatName003" sourceid="Stat3" value="3"/>
+				<choice name="%%StatName004%% (Stat 4)" condition="len $StatName004" sourceid="Stat4" value="4"/>
+				<choice name="%%StatName005%% (Stat 5)" condition="len $StatName005" sourceid="Stat5" value="5"/>
+				<choice name="%%StatName006%% (Stat 6)" condition="len $StatName006" sourceid="Stat6" value="6"/>
+			</parameter>
+			<parameter name="Mode" type="mcstring" default="Toggle">
+				<choice name="Toggle" value="Toggle" buttontag="Stat Fan Mode"/>
+				<choice name="Auto" value="Auto" buttontag="Stat Fan Auto"/>
+				<choice name="On" value="On" buttontag="Stat Fan On"/>
+			</parameter>
+		</function>
+
+		<function name="Adjust SetPoint" export="SetpointAdj" repeatrate="250">
+			<parameter name="Thermostat" type="mcinteger" default="1" >
+				<choice name="%%StatName001%% (Stat 1)" condition="len $StatName001" sourceid="Stat1" value="1"/>
+				<choice name="%%StatName002%% (Stat 2)" condition="len $StatName002" sourceid="Stat2" value="2"/>
+				<choice name="%%StatName003%% (Stat 3)" condition="len $StatName003" sourceid="Stat3" value="3"/>
+				<choice name="%%StatName004%% (Stat 4)" condition="len $StatName004" sourceid="Stat4" value="4"/>
+				<choice name="%%StatName005%% (Stat 5)" condition="len $StatName005" sourceid="Stat5" value="5"/>
+				<choice name="%%StatName006%% (Stat 6)" condition="len $StatName006" sourceid="Stat6" value="6"/>
+			</parameter>
+			<parameter name="Mode" type="mcstring" default="UP">
+				<choice name="Current/Both Auto Up" value="UP" buttontag="Stat Setpoint Up"/>
+				<choice name="Current/Both Auto Down" value="DN" buttontag="Stat Setpoint Down"/>
+				<choice name="Auto Heat Up" value="HUP" buttontag="Stat Heat Up"/>
+				<choice name="Auto Heat Down" value="HDN" buttontag="Stat Heat Down"/>
+				<choice name="Auto Cool Up" value="CUP" buttontag="Stat Cool Up"/>
+				<choice name="Auto Cool Down" value="CDN" buttontag="Stat Cool Down"/>
+			</parameter>
+		</function>
+	</category>
+
+</functions>

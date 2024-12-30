@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<device>
+  <sources>
+    <source maxitems ="6" name="Thermostat" sourceid="Stat">
+      <templates>
+        <template name="Climate"/>
+      </templates>
+    </source>
+	</sources>
+</device>

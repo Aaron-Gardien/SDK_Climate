@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title>MatrixBuilder - The Matrix Switcher Driver Writer</title>
+	</head>
+	
+  <body>
+<script type="text/javascript" >
+
+
+	
+	/* Need to add parameters for  Volume, Bass and Treble
+	 * Ranges and defaults
+	 */
+	
+
+
+//////////////////////////////////////////////////////////////////////////
+//	Support functions
+//////////////////////////////////////////////////////////////////////////
+function WriteEvents(name, exp, repeat)
+{
+	for (var x = 1; x <= 6; x++)
+	{
+		document.write('\t<category name="%%StatName'+(padDigits(x,3))+'%% (Stat '+x+') Events" condition="len $StatName'+(padDigits(x,3))+'" sourceid="Stat'+x+'">\r\n');
+		
+		document.write('\t\t<event name="Operating Mode Off" tag="OPMODE'+(padDigits(x,3))+'_00" />\r\n');
+		document.write('\t\t<event name="Operating Mode Heat" tag="OPMODE'+(padDigits(x,3))+'_01" />\r\n');
+		document.write('\t\t<event name="Operating Mode Cool" tag="OPMODE'+(padDigits(x,3))+'_02" />\r\n');
+		document.write('\t\t<event name="Operating Mode Auto" tag="OPMODE'+(padDigits(x,3))+'_03" />\r\n');
+
+		document.write('\t\t<event name="Operating State Idle" tag="OPSTATE'+(padDigits(x,3))+'_00" />\r\n');
+		document.write('\t\t<event name="Operating State Heating" tag="OPSTATE'+(padDigits(x,3))+'_01" />\r\n');
+		document.write('\t\t<event name="Operating State Cooling" tag="OPSTATE'+(padDigits(x,3))+'_02" />\r\n');
+		
+		document.write('\t\t<event name="Fan Mode Auto" tag="FANMODE'+(padDigits(x,3))+'_00" />\r\n');
+		document.write('\t\t<event name="Fan Mode On" tag="FANMODE'+(padDigits(x,3))+'_01" />\r\n');
+		
+		document.write('\t\t<event name="Fan State Off" tag="FANSTATE'+(padDigits(x,3))+'_00" />\r\n');
+		document.write('\t\t<event name="Fan State On" tag="FANSTATE'+(padDigits(x,3))+'_01" />\r\n');
+		
+		document.write('\t\t<event name="Temp Scale Fahrenheit" tag="TEMPSCALE'+(padDigits(x,3))+'_00" />\r\n');
+		document.write('\t\t<event name="Temp Scale Celsius" tag="TEMPSCALE'+(padDigits(x,3))+'_01" />\r\n');
+		
+		document.write('\t\t<event name="Not Initialized" tag="INITIALESTATE'+(padDigits(x,3))+'_00" />\r\n');
+		document.write('\t\t<event name="Initialized" tag="INITIALESTATE'+(padDigits(x,3))+'_01" />\r\n');
+		document.write('\t\t<event name="Initializing" tag="INITIALESTATE'+(padDigits(x,3))+'_02" />\r\n');
+		document.write('\t</category>\r\n');
+		document.write('\r\n');
+	}
+}
+
+function padDigits(n, totalDigits)
+{
+	n = n.toString();
+	var pd = "";
+	if (totalDigits > n.length) {
+		for (var i = 0; i < (totalDigits - n.length); i++) {
+			pd += "0";
+		}
+	}
+
+	return pd + n;
+}
+
+function WriteGUID() {
+   var S4 = function() {return (((1+Math.random())*0x10000)|0).toString(16).substring(1);};
+   return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+}
+
+document.write("<XMP>");
+WriteEvents();
+document.write("</XMP>");
+
+
+	  </script>
+		</font>
+  </body>
+</html>

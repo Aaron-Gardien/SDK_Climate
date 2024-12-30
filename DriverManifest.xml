@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<driverManifest>
+	<driver
+		id="{3cc5ce64-7af6-45ee-b3a9-f4e174403f1f}"
+    name="SDK Climate"
+    author="Remote Technologies Inc."
+    copyright="Copyright 2017 Remote Technologies Inc."
+    deviceManufacturer="RTI"
+    deviceModel="Virtual Climate"
+		driverVersion="1.0"
+		
+		minimumRuntimeVersion="15"		
+		minimumSoftwareVersion="9.9"
+		minimumApexVersion="10.0"
+		
+		processorType="XP-8"
+
+		configSettingsStream="ConfigSettings.xml"
+		systemEventsStream="SystemEvents.xml"
+		systemVariablesStream="SystemVariables.xml"
+		systemFunctionsStream="SystemFunctions.xml"
+		helpTextStream="instructions.rtf"
+    deviceDescriptionStream="DeviceDescription.xml"
+	>
+		<processorScript stream="SDK Virtual Climate.js" />
+
+		<package>
+			<output filename="SDK Climate" public="true" />
+      <include filename="ConfigSettings.xml"/>
+      <include filename="DeviceDescription.xml"/>
+      <include filename="DriverManifest.xml"/>
+      <include filename="instructions.rtf"/>
+      <include filename="SDK Virtual Climate Config Writer.html"/>
+      <include filename="SDK Virtual Climate Events Writer.html"/>
+      <include filename="SDK Virtual Climate Functions Writer.html"/>
+      <include filename="SDK Virtual Climate Variables Writer.html"/>
+      <include filename="SDK Virtual Climate.apex"/>
+      <include filename="SDK Virtual Climate.js"/>
+      <include filename="SDK Virtual Climate.rti"/>
+      <include filename="SystemEvents.xml"/>
+      <include filename="SystemFunctions.xml"/>
+      <include filename="SystemVariables.xml"/>
+			<description>
+				This driver is for the RTI SDK Virtual Climate Control.
+			</description>
+		</package>
+	</driver>
+</driverManifest>

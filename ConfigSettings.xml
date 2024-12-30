@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+
+	<category name="Scale Setting" description="Scale Fahrenheit or Celsius">
+		<setting type="mcinteger" name="Scale Setting" variable="Scale" default="0">
+			<choice name="Fahrenheit" value="0"/>
+			<choice name="Celsius" value="1"/>
+		</setting>
+	</category>
+
+	<category name="Thermostat Configuration">
+		<setting name="Thermostat 1 Name" type="string" variable="StatName001" sourceid="Stat1" newsourcedefault="Thermostat 1" default="Thermostat 1" description="Name for Thermostat 1"/>
+		<setting name="Thermostat 2 Name" type="string" variable="StatName002" condition="len $StatName001" sourceid="Stat2" newsourcedefault="Thermostat 2" default="" description="Name for Thermostat 2"/>
+		<setting name="Thermostat 3 Name" type="string" variable="StatName003" condition="len $StatName002" sourceid="Stat3" newsourcedefault="Thermostat 3" default="" description="Name for Thermostat 3"/>
+		<setting name="Thermostat 4 Name" type="string" variable="StatName004" condition="len $StatName003" sourceid="Stat4" newsourcedefault="Thermostat 4" default="" description="Name for Thermostat 4"/>
+		<setting name="Thermostat 5 Name" type="string" variable="StatName005" condition="len $StatName004" sourceid="Stat5" newsourcedefault="Thermostat 5" default="" description="Name for Thermostat 5"/>
+		<setting name="Thermostat 6 Name" type="string" variable="StatName006" condition="len $StatName005" sourceid="Stat6" newsourcedefault="Thermostat 6" default="" description="Name for Thermostat 6"/>
+	</category>
+
+	<category name="Debug Settings" description="Driver debug options" hidden="true">
+		<setting type="boolean" name="Enable Trace" variable="DebugTrace" description="Enable verbose debug output"/>
+	</category>
+	
+</configuration>

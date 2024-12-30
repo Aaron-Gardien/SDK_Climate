@@ -1,0 +1,94 @@
+<html>
+	<head>
+		<title>MatrixBuilder - The Matrix Switcher Driver Writer</title>
+	</head>
+	
+  <body>
+<script type="text/javascript" >
+
+
+	
+	/* Need to add parameters for  Volume, Bass and Treble
+	 * Ranges and defaults
+	 */
+	
+
+
+//////////////////////////////////////////////////////////////////////////
+//	Support functions
+//////////////////////////////////////////////////////////////////////////
+function WriteVariables(name, exp, repeat)
+{
+	for (var x = 1; x <= 6; x++)
+	{
+		document.write('<!-- Thermostat '+x+' Variables ////////////////////////////////////////////////////////// !-->\r\n');
+		document.write('<!-- ///////////////////////////////////////////////////////////////////////////////// !-->\r\n');
+		document.write('<!-- ///////////////////////////////////////////////////////////////////////////////// !-->\r\n');
+		document.write('\t<category name="%%StatName'+(padDigits(x,3))+'%% (Stat '+x+') Variables" sourceid="Stat'+x+'" condition="len $StatName'+(padDigits(x,3))+'">\r\n');
+		document.write('\t\t<variable name="Name" sysvar="Name'+(padDigits(x,3))+'" type="string" sample="%%StatName'+(padDigits(x,3))+'%%"/>\r\n');
+
+		document.write('\t\t<variable name="Current Temp" sysvar="CurTemp'+(padDigits(x,3))+'" type="integer" min="-200" max="1200" sample="720" format="F:10:%.1f" buttontag="Stat Temp In"/>\r\n');
+		
+		document.write('\t\t<variable name="Current Setpoint" sysvar="CurSetpoint'+(padDigits(x,3))+'" min="0" max="1000" sample="680" type="integer" format="F:10:%.1f" buttontag="Stat Setpoint"/>\r\n');
+		document.write('\t\t<variable name="Heat Setpoint" sysvar="HeatSetpoint'+(padDigits(x,3))+'" min="0" max="1000" sample="680" type="integer" format="F:10:%.1f" buttontag="Stat Heat Setpoint"/>\r\n');
+		document.write('\t\t<variable name="Cool Setpoint" sysvar="CoolSetpoint'+(padDigits(x,3))+'" min="0" max="1000" sample="730" type="integer" format="F:10:%.1f" buttontag="Stat Cool Setpoint"/>\r\n');
+		
+		document.write('\t\t<variable name="Operating Mode" sysvar="OPMode'+(padDigits(x,3))+'" type="integer" sample="0" format="L:0:Off:1:Heat:2:Cool:3:Auto" buttontag="Stat Mode"/>\r\n');
+		document.write('\t\t\t<variable name="Operating Mode Off" sysvar="OPMode'+(padDigits(x,3))+'_00" type="boolean" sample="true" format="B::Off" buttontag="Stat Off"/>\r\n');
+		document.write('\t\t\t<variable name="Operating Mode Heat" sysvar="OPMode'+(padDigits(x,3))+'_01" type="boolean" sample="true" format="B::Heat" buttontag="Stat Heat"/>\r\n');
+		document.write('\t\t\t<variable name="Operating Mode Cool" sysvar="OPMode'+(padDigits(x,3))+'_02" type="boolean" sample="true" format="B::Cool" buttontag="Stat Cool"/>\r\n');
+		document.write('\t\t\t<variable name="Operating Mode Auto" sysvar="OPMode'+(padDigits(x,3))+'_03" type="boolean" sample="true" format="B::Auto" buttontag="Stat Auto"/>\r\n');
+		
+		document.write('\t\t<variable name="Operating State" sysvar="OPState'+(padDigits(x,3))+'" type="integer" sample="0" format="L:0:Idle:1:Heating:2:Cooling" buttontag="Stat Operating State"/>\r\n');
+		document.write('\t\t\t<variable name="Operating State Idle" sysvar="OPState'+(padDigits(x,3))+'_00" type="boolean" sample="true" format="B::Idle"/>\r\n');
+		document.write('\t\t\t<variable name="Operating State Heating" sysvar="OPState'+(padDigits(x,3))+'_01" type="boolean" sample="true" format="B::Heating"/>\r\n');
+		document.write('\t\t\t<variable name="Operating State Cooling" sysvar="OPState'+(padDigits(x,3))+'_02" type="boolean" sample="true" format="B::Cooling"/>\r\n');
+
+		document.write('\t\t<variable name="Fan Mode" sysvar="FanMode'+(padDigits(x,3))+'" type="integer" sample="0" format="L:0:Auto:1:On" buttontag="Stat Fan Mode"/>\r\n');
+		document.write('\t\t\t<variable name="Fan Mode Auto" sysvar="FanMode'+(padDigits(x,3))+'_00" type="boolean" sample="true" format="B::Auto" buttontag="Stat Fan Auto"/>\r\n');
+		document.write('\t\t\t<variable name="Fan Mode On" sysvar="FanMode'+(padDigits(x,3))+'_01" type="boolean" sample="true" format="B::On" buttontag="Stat Fan On"/>\r\n');
+		
+		document.write('\t\t<variable name="Fan State" sysvar="FanState'+(padDigits(x,3))+'" type="integer" sample="0" format="L:0:Off:1:On" buttontag="Stat Fan State"/>\r\n');
+		document.write('\t\t\t<variable name="Fan State Off" sysvar="FanState'+(padDigits(x,3))+'_00" type="boolean" sample="true" format="B::Off"/>\r\n');
+		document.write('\t\t\t<variable name="Fan State On" sysvar="FanState'+(padDigits(x,3))+'_01" type="boolean" sample="true" format="B::On"/>\r\n');
+		
+		document.write('\t\t<variable name="Temp Scale" sysvar="TempScale'+(padDigits(x,3))+'" type="integer" sample="0" format="L:0:Fahrenheit:1:Celsius"/>\r\n');
+		document.write('\t\t\t<variable name="Temp Scale Fahrenheit" sysvar="TempScale'+(padDigits(x,3))+'_00" type="boolean" sample="true" format="B::Fahrenheit"/>\r\n');
+		document.write('\t\t\t<variable name="Temp Scale Celsius" sysvar="TempScale'+(padDigits(x,3))+'_01" type="boolean" sample="true" format="B::Celsius"/>\r\n');
+
+		document.write('\t\t<variable name="Initialization State" sysvar="InitializeState'+(padDigits(x,3))+'" type="integer" sample="0" format="L:0:Not Initialized:1:Initialized:2:Initializing"/>\r\n');
+		document.write('\t\t\t<variable name="Not Initialized" sysvar="InitializeState'+(padDigits(x,3))+'_00" type="boolean" sample="true" format="B::Not Initialized"/>\r\n');
+		document.write('\t\t\t<variable name="Initialized" sysvar="InitializeState'+(padDigits(x,3))+'_01" type="boolean" sample="true" format="B::Initialized"/>\r\n');
+		document.write('\t\t\t<variable name="Initializing" sysvar="InitializeState'+(padDigits(x,3))+'_02" type="boolean" sample="true" format="B::Initializing"/>\r\n');
+		document.write('\t</category>\r\n');
+		document.write('\r\n');
+	}
+}
+
+function padDigits(n, totalDigits)
+{
+	n = n.toString();
+	var pd = "";
+	if (totalDigits > n.length) {
+		for (var i = 0; i < (totalDigits - n.length); i++) {
+			pd += "0";
+		}
+	}
+
+	return pd + n;
+}
+
+function WriteGUID() {
+   var S4 = function() {return (((1+Math.random())*0x10000)|0).toString(16).substring(1);};
+   return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+}
+
+document.write("<XMP>");
+WriteVariables();
+document.write("</XMP>");
+
+
+	  </script>
+		</font>
+  </body>
+</html>

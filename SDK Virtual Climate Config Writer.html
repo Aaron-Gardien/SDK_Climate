@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<title>MatrixBuilder - The Matrix Switcher Driver Writer</title>
+	</head>
+	
+  <body>
+<script type="text/javascript" >
+
+
+	
+	/* Need to add parameters for  Volume, Bass and Treble
+	 * Ranges and defaults
+	 */
+	
+
+
+//////////////////////////////////////////////////////////////////////////
+//	Support functions
+//////////////////////////////////////////////////////////////////////////
+function WriteConfig(name, exp, repeat)
+{
+	document.write('\t<category name="Scale Setting" description="Scale Fahrenheit or Celsius">\r\n');
+	document.write('\t\t<setting type="mcinteger" name="Scale Setting" variable="Scale" default="0">\r\n');
+	document.write('\t\t\t<choice name="Fahrenheit" value="0"/>\r\n');
+	document.write('\t\t\t<choice name="Celsius" value="1"/>\r\n');
+	document.write('\t\t</setting>\r\n');
+	document.write('\t</category>\r\n');
+	document.write('\r\n');
+	document.write('\t<category name="Thermostat Configuration">\r\n');
+	document.write('\t\t<setting name="Thermostat 1 Name" type="string" variable="StatName001" sourceid="Stat1" newsourcedefault="Thermostat 1" default="Thermostat 1" description="Name for Thermostat 1"/>\r\n');
+	for (var c = 2; c <= 6; c++)
+  {
+		document.write('\t\t<setting name="Thermostat '+c+' Name" type="string" variable="StatName'+(padDigits(c,3))+'" condition="len $StatName'+(padDigits((c-1),3))+'" sourceid="Stat'+c+'" newsourcedefault="Thermostat '+c+'" default="" description="Name for Thermostat '+c+'"/>\r\n');
+	}
+	document.write('\t</category>\r\n');
+	document.write('\r\n');
+	document.write('\t<category name="Debug Settings" description="Driver debug options" hidden="true">\r\n');
+	document.write('\t\t<setting type="boolean" name="Enable Trace" variable="DebugTrace" description="Enable verbose debug output"/>\r\n');
+	document.write('\t</category>\r\n');
+}
+
+function padDigits(n, totalDigits)
+{
+	n = n.toString();
+	var pd = "";
+	if (totalDigits > n.length) {
+		for (var i = 0; i < (totalDigits - n.length); i++) {
+			pd += "0";
+		}
+	}
+
+	return pd + n;
+}
+
+function WriteGUID() {
+   var S4 = function() {return (((1+Math.random())*0x10000)|0).toString(16).substring(1);};
+   return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+}
+
+document.write("<XMP>");
+WriteConfig();
+document.write("</XMP>");
+
+
+	  </script>
+		</font>
+  </body>
+</html>

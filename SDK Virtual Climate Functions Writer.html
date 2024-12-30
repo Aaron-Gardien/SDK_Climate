@@ -1,0 +1,120 @@
+<html>
+	<head>
+		<title>MatrixBuilder - The Matrix Switcher Driver Writer</title>
+		</head>
+	
+  <body>
+<script type="text/javascript" >
+
+
+	
+	/* Need to add parameters for  Volume, Bass and Treble
+	 * Ranges and defaults
+	 */
+	
+
+
+//////////////////////////////////////////////////////////////////////////
+//	Support functions
+//////////////////////////////////////////////////////////////////////////
+function WriteFunctions(name, exp, repeat)
+{
+
+	document.write('\t<category name="Thermostat - Control" condition="len $StatName001">\r\n');
+	document.write('\t\t<function name="Operating Mode" export="SetOPMode" repeatrate="0">\r\n');
+	document.write('\t\t\t<parameter name="Thermostat" type="mcinteger" default="1" >\r\n');
+	for (var x = 1; x <= 6; x++)
+	{
+	document.write('\t\t\t\t<choice name="%%StatName'+(padDigits(x,3))+'%% (Stat '+x+')" condition="len $StatName'+(padDigits(x,3))+'" sourceid="Stat'+x+'" value="'+x+'"/>\r\n');
+	}
+	document.write('\t\t\t</parameter>\r\n');
+	document.write('\t\t\t<parameter name="Mode" type="mcstring" default="Toggle">\r\n');
+	document.write('\t\t\t\t<choice name="Toggle" value="Toggle" buttontag="Stat Mode"/>\r\n');
+	document.write('\t\t\t\t<choice name="Off" value="Off" buttontag="Stat Off"/>\r\n');
+	document.write('\t\t\t\t<choice name="Heat" value="Heat" buttontag="Stat Heat"/>\r\n');
+	document.write('\t\t\t\t<choice name="Cool" value="Cool" buttontag="Stat Cool"/>\r\n');
+	document.write('\t\t\t\t<choice name="Auto" value="Auto" buttontag="Stat Auto"/>\r\n');
+	document.write('\t\t\t</parameter>\r\n');
+	document.write('\t\t</function>\r\n');
+	document.write('\r\n');
+	
+	document.write('\t\t<function name="Fan Mode" export="SetFanMode" repeatrate="0">\r\n');
+	document.write('\t\t\t<parameter name="Thermostat" type="mcinteger" default="1" >\r\n');
+	for (var x = 1; x <= 6; x++)
+	{
+	document.write('\t\t\t\t<choice name="%%StatName'+(padDigits(x,3))+'%% (Stat '+x+')" condition="len $StatName'+(padDigits(x,3))+'" sourceid="Stat'+x+'" value="'+x+'"/>\r\n');
+	}
+	document.write('\t\t\t</parameter>\r\n');
+	document.write('\t\t\t<parameter name="Mode" type="mcstring" default="Toggle">\r\n');
+	document.write('\t\t\t\t<choice name="Toggle" value="Toggle" buttontag="Stat Fan Mode"/>\r\n');
+	document.write('\t\t\t\t<choice name="Auto" value="Auto" buttontag="Stat Fan Auto"/>\r\n');
+	document.write('\t\t\t\t<choice name="On" value="On" buttontag="Stat Fan On"/>\r\n');
+	document.write('\t\t\t</parameter>\r\n');
+	document.write('\t\t</function>\r\n');
+	document.write('\r\n');
+	
+/*
+	document.write('\t\t<function name="Set SetPoint" export="SetSetpoint" repeatrate="250">\r\n');
+	document.write('\t\t\t<parameter name="Thermostat" type="mcinteger" default="1" >\r\n');
+	for (var x = 1; x <= 6; x++)
+	{
+	document.write('\t\t\t\t<choice name="%%StatName'+(padDigits(x,3))+'%% (Stat '+x+')" condition="len $StatName'+(padDigits(x,3))+'" sourceid="Stat'+x+'" value="'+x+'"/>\r\n');
+	}
+	document.write('\t\t\t</parameter>\r\n');
+	document.write('\t\t\t<parameter name="Mode" type="mcstring" default="Current">\r\n');
+	document.write('\t\t\t\t<choice name="Current Mode" value="Current"/>\r\n');
+	document.write('\t\t\t\t<choice name="Auto Heat" value="Heat"/>\r\n');
+	document.write('\t\t\t\t<choice name="Auto Cool" value="Cool"/>\r\n');
+	document.write('\t\t\t</parameter>\r\n');
+	document.write('\t\t\t<parameter name="Level" type="integer" min="0" max="1000" default="720" increment="5"/>\r\n');
+	document.write('\t\t</function>\r\n');
+	document.write('\r\n');
+*/
+
+	document.write('\t\t<function name="Adjust SetPoint" export="SetpointAdj" repeatrate="250">\r\n');
+	document.write('\t\t\t<parameter name="Thermostat" type="mcinteger" default="1" >\r\n');
+	for (var x = 1; x <= 6; x++)
+	{
+	document.write('\t\t\t\t<choice name="%%StatName'+(padDigits(x,3))+'%% (Stat '+x+')" condition="len $StatName'+(padDigits(x,3))+'" sourceid="Stat'+x+'" value="'+x+'"/>\r\n');
+	}
+	document.write('\t\t\t</parameter>\r\n');
+	document.write('\t\t\t<parameter name="Mode" type="mcstring" default="UP">\r\n');
+	document.write('\t\t\t\t<choice name="Current/Both Auto Up" value="UP" buttontag="Stat Setpoint Up"/>\r\n');
+	document.write('\t\t\t\t<choice name="Current/Both Auto Down" value="DN" buttontag="Stat Setpoint Down"/>\r\n');
+	document.write('\t\t\t\t<choice name="Auto Heat Up" value="HUP" buttontag="Stat Heat Up"/>\r\n');
+	document.write('\t\t\t\t<choice name="Auto Heat Down" value="HDN" buttontag="Stat Heat Down"/>\r\n');
+	document.write('\t\t\t\t<choice name="Auto Cool Up" value="CUP" buttontag="Stat Cool Up"/>\r\n');
+	document.write('\t\t\t\t<choice name="Auto Cool Down" value="CDN" buttontag="Stat Cool Down"/>\r\n');
+	document.write('\t\t\t</parameter>\r\n');
+	document.write('\t\t</function>\r\n');
+	document.write('\t</category>\r\n');
+	document.write('\r\n');
+}
+
+function padDigits(n, totalDigits)
+{
+	n = n.toString();
+	var pd = "";
+	if (totalDigits > n.length) {
+		for (var i = 0; i < (totalDigits - n.length); i++) {
+			pd += "0";
+		}
+	}
+
+	return pd + n;
+}
+
+function WriteGUID() {
+   var S4 = function() {return (((1+Math.random())*0x10000)|0).toString(16).substring(1);};
+   return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+}
+
+document.write("<XMP>");
+WriteFunctions();
+document.write("</XMP>");
+
+
+	  </script>
+		</font>
+  </body>
+</html>

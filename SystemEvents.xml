@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<events>
+
+	<category name="%%StatName001%% (Stat 1) Events" condition="len $StatName001" sourceid="Stat1">
+		<event name="Operating Mode Off" tag="OPMODE001_00" />
+		<event name="Operating Mode Heat" tag="OPMODE001_01" />
+		<event name="Operating Mode Cool" tag="OPMODE001_02" />
+		<event name="Operating Mode Auto" tag="OPMODE001_03" />
+		<event name="Operating State Idle" tag="OPSTATE001_00" />
+		<event name="Operating State Heating" tag="OPSTATE001_01" />
+		<event name="Operating State Cooling" tag="OPSTATE001_02" />
+		<event name="Fan Mode Auto" tag="FANMODE001_00" />
+		<event name="Fan Mode On" tag="FANMODE001_01" />
+		<event name="Fan State Off" tag="FANSTATE001_00" />
+		<event name="Fan State On" tag="FANSTATE001_01" />
+		<event name="Temp Scale Fahrenheit" tag="TEMPSCALE001_00" />
+		<event name="Temp Scale Celsius" tag="TEMPSCALE001_01" />
+		<event name="Not Initialized" tag="INITIALESTATE001_00" />
+		<event name="Initialized" tag="INITIALESTATE001_01" />
+		<event name="Initializing" tag="INITIALESTATE001_02" />
+	</category>
+
+	<category name="%%StatName002%% (Stat 2) Events" condition="len $StatName002" sourceid="Stat2">
+		<event name="Operating Mode Off" tag="OPMODE002_00" />
+		<event name="Operating Mode Heat" tag="OPMODE002_01" />
+		<event name="Operating Mode Cool" tag="OPMODE002_02" />
+		<event name="Operating Mode Auto" tag="OPMODE002_03" />
+		<event name="Operating State Idle" tag="OPSTATE002_00" />
+		<event name="Operating State Heating" tag="OPSTATE002_01" />
+		<event name="Operating State Cooling" tag="OPSTATE002_02" />
+		<event name="Fan Mode Auto" tag="FANMODE002_00" />
+		<event name="Fan Mode On" tag="FANMODE002_01" />
+		<event name="Fan State Off" tag="FANSTATE002_00" />
+		<event name="Fan State On" tag="FANSTATE002_01" />
+		<event name="Temp Scale Fahrenheit" tag="TEMPSCALE002_00" />
+		<event name="Temp Scale Celsius" tag="TEMPSCALE002_01" />
+		<event name="Not Initialized" tag="INITIALESTATE002_00" />
+		<event name="Initialized" tag="INITIALESTATE002_01" />
+		<event name="Initializing" tag="INITIALESTATE002_02" />
+	</category>
+
+	<category name="%%StatName003%% (Stat 3) Events" condition="len $StatName003" sourceid="Stat3">
+		<event name="Operating Mode Off" tag="OPMODE003_00" />
+		<event name="Operating Mode Heat" tag="OPMODE003_01" />
+		<event name="Operating Mode Cool" tag="OPMODE003_02" />
+		<event name="Operating Mode Auto" tag="OPMODE003_03" />
+		<event name="Operating State Idle" tag="OPSTATE003_00" />
+		<event name="Operating State Heating" tag="OPSTATE003_01" />
+		<event name="Operating State Cooling" tag="OPSTATE003_02" />
+		<event name="Fan Mode Auto" tag="FANMODE003_00" />
+		<event name="Fan Mode On" tag="FANMODE003_01" />
+		<event name="Fan State Off" tag="FANSTATE003_00" />
+		<event name="Fan State On" tag="FANSTATE003_01" />
+		<event name="Temp Scale Fahrenheit" tag="TEMPSCALE003_00" />
+		<event name="Temp Scale Celsius" tag="TEMPSCALE003_01" />
+		<event name="Not Initialized" tag="INITIALESTATE003_00" />
+		<event name="Initialized" tag="INITIALESTATE003_01" />
+		<event name="Initializing" tag="INITIALESTATE003_02" />
+	</category>
+
+	<category name="%%StatName004%% (Stat 4) Events" condition="len $StatName004" sourceid="Stat4">
+		<event name="Operating Mode Off" tag="OPMODE004_00" />
+		<event name="Operating Mode Heat" tag="OPMODE004_01" />
+		<event name="Operating Mode Cool" tag="OPMODE004_02" />
+		<event name="Operating Mode Auto" tag="OPMODE004_03" />
+		<event name="Operating State Idle" tag="OPSTATE004_00" />
+		<event name="Operating State Heating" tag="OPSTATE004_01" />
+		<event name="Operating State Cooling" tag="OPSTATE004_02" />
+		<event name="Fan Mode Auto" tag="FANMODE004_00" />
+		<event name="Fan Mode On" tag="FANMODE004_01" />
+		<event name="Fan State Off" tag="FANSTATE004_00" />
+		<event name="Fan State On" tag="FANSTATE004_01" />
+		<event name="Temp Scale Fahrenheit" tag="TEMPSCALE004_00" />
+		<event name="Temp Scale Celsius" tag="TEMPSCALE004_01" />
+		<event name="Not Initialized" tag="INITIALESTATE004_00" />
+		<event name="Initialized" tag="INITIALESTATE004_01" />
+		<event name="Initializing" tag="INITIALESTATE004_02" />
+	</category>
+
+	<category name="%%StatName005%% (Stat 5) Events" condition="len $StatName005" sourceid="Stat5">
+		<event name="Operating Mode Off" tag="OPMODE005_00" />
+		<event name="Operating Mode Heat" tag="OPMODE005_01" />
+		<event name="Operating Mode Cool" tag="OPMODE005_02" />
+		<event name="Operating Mode Auto" tag="OPMODE005_03" />
+		<event name="Operating State Idle" tag="OPSTATE005_00" />
+		<event name="Operating State Heating" tag="OPSTATE005_01" />
+		<event name="Operating State Cooling" tag="OPSTATE005_02" />
+		<event name="Fan Mode Auto" tag="FANMODE005_00" />
+		<event name="Fan Mode On" tag="FANMODE005_01" />
+		<event name="Fan State Off" tag="FANSTATE005_00" />
+		<event name="Fan State On" tag="FANSTATE005_01" />
+		<event name="Temp Scale Fahrenheit" tag="TEMPSCALE005_00" />
+		<event name="Temp Scale Celsius" tag="TEMPSCALE005_01" />
+		<event name="Not Initialized" tag="INITIALESTATE005_00" />
+		<event name="Initialized" tag="INITIALESTATE005_01" />
+		<event name="Initializing" tag="INITIALESTATE005_02" />
+	</category>
+
+	<category name="%%StatName006%% (Stat 6) Events" condition="len $StatName006" sourceid="Stat6">
+		<event name="Operating Mode Off" tag="OPMODE006_00" />
+		<event name="Operating Mode Heat" tag="OPMODE006_01" />
+		<event name="Operating Mode Cool" tag="OPMODE006_02" />
+		<event name="Operating Mode Auto" tag="OPMODE006_03" />
+		<event name="Operating State Idle" tag="OPSTATE006_00" />
+		<event name="Operating State Heating" tag="OPSTATE006_01" />
+		<event name="Operating State Cooling" tag="OPSTATE006_02" />
+		<event name="Fan Mode Auto" tag="FANMODE006_00" />
+		<event name="Fan Mode On" tag="FANMODE006_01" />
+		<event name="Fan State Off" tag="FANSTATE006_00" />
+		<event name="Fan State On" tag="FANSTATE006_01" />
+		<event name="Temp Scale Fahrenheit" tag="TEMPSCALE006_00" />
+		<event name="Temp Scale Celsius" tag="TEMPSCALE006_01" />
+		<event name="Not Initialized" tag="INITIALESTATE006_00" />
+		<event name="Initialized" tag="INITIALESTATE006_01" />
+		<event name="Initializing" tag="INITIALESTATE006_02" />
+	</category>
+
+</events>

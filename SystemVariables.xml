@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<variables>
+
+<!-- Thermostat 1 Variables ////////////////////////////////////////////////////////// !-->
+<!-- ///////////////////////////////////////////////////////////////////////////////// !-->
+<!-- ///////////////////////////////////////////////////////////////////////////////// !-->
+	<category name="%%StatName001%% (Stat 1) Variables" sourceid="Stat1" condition="len $StatName001">
+		<variable name="Name" sysvar="Name001" type="string" sample="%%StatName001%%"/>
+		<variable name="Current Temp" sysvar="CurTemp001" type="integer" min="-200" max="1200" sample="720" format="F:10:%.1f" buttontag="Stat Temp In"/>
+		<variable name="Current Setpoint" sysvar="CurSetpoint001" min="0" max="1000" sample="680" type="integer" format="F:10:%.1f" buttontag="Stat Setpoint"/>
+		<variable name="Heat Setpoint" sysvar="HeatSetpoint001" min="0" max="1000" sample="680" type="integer" format="F:10:%.1f" buttontag="Stat Heat Setpoint"/>
+		<variable name="Cool Setpoint" sysvar="CoolSetpoint001" min="0" max="1000" sample="730" type="integer" format="F:10:%.1f" buttontag="Stat Cool Setpoint"/>
+		<variable name="Operating Mode" sysvar="OPMode001" type="integer" sample="0" format="L:0:Off:1:Heat:2:Cool:3:Auto" buttontag="Stat Mode"/>
+			<variable name="Operating Mode Off" sysvar="OPMode001_00" type="boolean" sample="true" format="B::Off" buttontag="Stat Off"/>
+			<variable name="Operating Mode Heat" sysvar="OPMode001_01" type="boolean" sample="true" format="B::Heat" buttontag="Stat Heat"/>
+			<variable name="Operating Mode Cool" sysvar="OPMode001_02" type="boolean" sample="true" format="B::Cool" buttontag="Stat Cool"/>
+			<variable name="Operating Mode Auto" sysvar="OPMode001_03" type="boolean" sample="true" format="B::Auto" buttontag="Stat Auto"/>
+		<variable name="Operating State" sysvar="OPState001" type="integer" sample="0" format="L:0:Idle:1:Heating:2:Cooling" buttontag="Stat Operating State"/>
+			<variable name="Operating State Idle" sysvar="OPState001_00" type="boolean" sample="true" format="B::Idle"/>
+			<variable name="Operating State Heating" sysvar="OPState001_01" type="boolean" sample="true" format="B::Heating"/>
+			<variable name="Operating State Cooling" sysvar="OPState001_02" type="boolean" sample="true" format="B::Cooling"/>
+		<variable name="Fan Mode" sysvar="FanMode001" type="integer" sample="0" format="L:0:Auto:1:On" buttontag="Stat Fan Mode"/>
+			<variable name="Fan Mode Auto" sysvar="FanMode001_00" type="boolean" sample="true" format="B::Auto" buttontag="Stat Fan Auto"/>
+			<variable name="Fan Mode On" sysvar="FanMode001_01" type="boolean" sample="true" format="B::On" buttontag="Stat Fan On"/>
+		<variable name="Fan State" sysvar="FanState001" type="integer" sample="0" format="L:0:Off:1:On" buttontag="Stat Fan State"/>
+			<variable name="Fan State Off" sysvar="FanState001_00" type="boolean" sample="true" format="B::Off"/>
+			<variable name="Fan State On" sysvar="FanState001_01" type="boolean" sample="true" format="B::On"/>
+		<variable name="Temp Scale" sysvar="TempScale001" type="integer" sample="0" format="L:0:Fahrenheit:1:Celsius"/>
+			<variable name="Temp Scale Fahrenheit" sysvar="TempScale001_00" type="boolean" sample="true" format="B::Fahrenheit"/>
+			<variable name="Temp Scale Celsius" sysvar="TempScale001_01" type="boolean" sample="true" format="B::Celsius"/>
+		<variable name="Initialization State" sysvar="InitializeState001" type="integer" sample="0" format="L:0:Not Initialized:1:Initialized:2:Initializing"/>
+			<variable name="Not Initialized" sysvar="InitializeState001_00" type="boolean" sample="true" format="B::Not Initialized"/>
+			<variable name="Initialized" sysvar="InitializeState001_01" type="boolean" sample="true" format="B::Initialized"/>
+			<variable name="Initializing" sysvar="InitializeState001_02" type="boolean" sample="true" format="B::Initializing"/>
+	</category>
+
+<!-- Thermostat 2 Variables ////////////////////////////////////////////////////////// !-->
+<!-- ///////////////////////////////////////////////////////////////////////////////// !-->
+<!-- ///////////////////////////////////////////////////////////////////////////////// !-->
+	<category name="%%StatName002%% (Stat 2) Variables" sourceid="Stat2" condition="len $StatName002">
+		<variable name="Name" sysvar="Name002" type="string" sample="%%StatName002%%"/>
+		<variable name="Current Temp" sysvar="CurTemp002" type="integer" min="-200" max="1200" sample="720" format="F:10:%.1f" buttontag="Stat Temp In"/>
+		<variable name="Current Setpoint" sysvar="CurSetpoint002" min="0" max="1000" sample="680" type="integer" format="F:10:%.1f" buttontag="Stat Setpoint"/>
+		<variable name="Heat Setpoint" sysvar="HeatSetpoint002" min="0" max="1000" sample="680" type="integer" format="F:10:%.1f" buttontag="Stat Heat Setpoint"/>
+		<variable name="Cool Setpoint" sysvar="CoolSetpoint002" min="0" max="1000" sample="730" type="integer" format="F:10:%.1f" buttontag="Stat Cool Setpoint"/>
+		<variable name="Operating Mode" sysvar="OPMode002" type="integer" sample="0" format="L:0:Off:1:Heat:2:Cool:3:Auto" buttontag="Stat Mode"/>
+			<variable name="Operating Mode Off" sysvar="OPMode002_00" type="boolean" sample="true" format="B::Off" buttontag="Stat Off"/>
+			<variable name="Operating Mode Heat" sysvar="OPMode002_01" type="boolean" sample="true" format="B::Heat" buttontag="Stat Heat"/>
+			<variable name="Operating Mode Cool" sysvar="OPMode002_02" type="boolean" sample="true" format="B::Cool" buttontag="Stat Cool"/>
+			<variable name="Operating Mode Auto" sysvar="OPMode002_03" type="boolean" sample="true" format="B::Auto" buttontag="Stat Auto"/>
+		<variable name="Operating State" sysvar="OPState002" type="integer" sample="0" format="L:0:Idle:1:Heating:2:Cooling" buttontag="Stat Operating State"/>
+			<variable name="Operating State Idle" sysvar="OPState002_00" type="boolean" sample="true" format="B::Idle"/>
+			<variable name="Operating State Heating" sysvar="OPState002_01" type="boolean" sample="true" format="B::Heating"/>
+			<variable name="Operating State Cooling" sysvar="OPState002_02" type="boolean" sample="true" format="B::Cooling"/>
+		<variable name="Fan Mode" sysvar="FanMode002" type="integer" sample="0" format="L:0:Auto:1:On" buttontag="Stat Fan Mode"/>
+			<variable name="Fan Mode Auto" sysvar="FanMode002_00" type="boolean" sample="true" format="B::Auto" buttontag="Stat Fan Auto"/>
+			<variable name="Fan Mode On" sysvar="FanMode002_01" type="boolean" sample="true" format="B::On" buttontag="Stat Fan On"/>
+		<variable name="Fan State" sysvar="FanState002" type="integer" sample="0" format="L:0:Off:1:On" buttontag="Stat Fan State"/>
+			<variable name="Fan State Off" sysvar="FanState002_00" type="boolean" sample="true" format="B::Off"/>
+			<variable name="Fan State On" sysvar="FanState002_01" type="boolean" sample="true" format="B::On"/>
+		<variable name="Temp Scale" sysvar="TempScale002" type="integer" sample="0" format="L:0:Fahrenheit:1:Celsius"/>
+			<variable name="Temp Scale Fahrenheit" sysvar="TempScale002_00" type="boolean" sample="true" format="B::Fahrenheit"/>
+			<variable name="Temp Scale Celsius" sysvar="TempScale002_01" type="boolean" sample="true" format="B::Celsius"/>
+		<variable name="Initialization State" sysvar="InitializeState002" type="integer" sample="0" format="L:0:Not Initialized:1:Initialized:2:Initializing"/>
+			<variable name="Not Initialized" sysvar="InitializeState002_00" type="boolean" sample="true" format="B::Not Initialized"/>
+			<variable name="Initialized" sysvar="InitializeState002_01" type="boolean" sample="true" format="B::Initialized"/>
+			<variable name="Initializing" sysvar="InitializeState002_02" type="boolean" sample="true" format="B::Initializing"/>
+	</category>
+
+<!-- Thermostat 3 Variables ////////////////////////////////////////////////////////// !-->
+<!-- ///////////////////////////////////////////////////////////////////////////////// !-->
+<!-- ///////////////////////////////////////////////////////////////////////////////// !-->
+	<category name="%%StatName003%% (Stat 3) Variables" sourceid="Stat3" condition="len $StatName003">
+		<variable name="Name" sysvar="Name003" type="string" sample="%%StatName003%%"/>
+		<variable name="Current Temp" sysvar="CurTemp003" type="integer" min="-200" max="1200" sample="720" format="F:10:%.1f" buttontag="Stat Temp In"/>
+		<variable name="Current Setpoint" sysvar="CurSetpoint003" min="0" max="1000" sample="680" type="integer" format="F:10:%.1f" buttontag="Stat Setpoint"/>
+		<variable name="Heat Setpoint" sysvar="HeatSetpoint003" min="0" max="1000" sample="680" type="integer" format="F:10:%.1f" buttontag="Stat Heat Setpoint"/>
+		<variable name="Cool Setpoint" sysvar="CoolSetpoint003" min="0" max="1000" sample="730" type="integer" format="F:10:%.1f" buttontag="Stat Cool Setpoint"/>
+		<variable name="Operating Mode" sysvar="OPMode003" type="integer" sample="0" format="L:0:Off:1:Heat:2:Cool:3:Auto" buttontag="Stat Mode"/>
+			<variable name="Operating Mode Off" sysvar="OPMode003_00" type="boolean" sample="true" format="B::Off" buttontag="Stat Off"/>
+			<variable name="Operating Mode Heat" sysvar="OPMode003_01" type="boolean" sample="true" format="B::Heat" buttontag="Stat Heat"/>
+			<variable name="Operating Mode Cool" sysvar="OPMode003_02" type="boolean" sample="true" format="B::Cool" buttontag="Stat Cool"/>
+			<variable name="Operating Mode Auto" sysvar="OPMode003_03" type="boolean" sample="true" format="B::Auto" buttontag="Stat Auto"/>
+		<variable name="Operating State" sysvar="OPState003" type="integer" sample="0" format="L:0:Idle:1:Heating:2:Cooling" buttontag="Stat Operating State"/>
+			<variable name="Operating State Idle" sysvar="OPState003_00" type="boolean" sample="true" format="B::Idle"/>
+			<variable name="Operating State Heating" sysvar="OPState003_01" type="boolean" sample="true" format="B::Heating"/>
+			<variable name="Operating State Cooling" sysvar="OPState003_02" type="boolean" sample="true" format="B::Cooling"/>
+		<variable name="Fan Mode" sysvar="FanMode003" type="integer" sample="0" format="L:0:Auto:1:On" buttontag="Stat Fan Mode"/>
+			<variable name="Fan Mode Auto" sysvar="FanMode003_00" type="boolean" sample="true" format="B::Auto" buttontag="Stat Fan Auto"/>
+			<variable name="Fan Mode On" sysvar="FanMode003_01" type="boolean" sample="true" format="B::On" buttontag="Stat Fan On"/>
+		<variable name="Fan State" sysvar="FanState003" type="integer" sample="0" format="L:0:Off:1:On" buttontag="Stat Fan State"/>
+			<variable name="Fan State Off" sysvar="FanState003_00" type="boolean" sample="true" format="B::Off"/>
+			<variable name="Fan State On" sysvar="FanState003_01" type="boolean" sample="true" format="B::On"/>
+		<variable name="Temp Scale" sysvar="TempScale003" type="integer" sample="0" format="L:0:Fahrenheit:1:Celsius"/>
+			<variable name="Temp Scale Fahrenheit" sysvar="TempScale003_00" type="boolean" sample="true" format="B::Fahrenheit"/>
+			<variable name="Temp Scale Celsius" sysvar="TempScale003_01" type="boolean" sample="true" format="B::Celsius"/>
+		<variable name="Initialization State" sysvar="InitializeState003" type="integer" sample="0" format="L:0:Not Initialized:1:Initialized:2:Initializing"/>
+			<variable name="Not Initialized" sysvar="InitializeState003_00" type="boolean" sample="true" format="B::Not Initialized"/>
+			<variable name="Initialized" sysvar="InitializeState003_01" type="boolean" sample="true" format="B::Initialized"/>
+			<variable name="Initializing" sysvar="InitializeState003_02" type="boolean" sample="true" format="B::Initializing"/>
+	</category>
+
+<!-- Thermostat 4 Variables ////////////////////////////////////////////////////////// !-->
+<!-- ///////////////////////////////////////////////////////////////////////////////// !-->
+<!-- ///////////////////////////////////////////////////////////////////////////////// !-->
+	<category name="%%StatName004%% (Stat 4) Variables" sourceid="Stat4" condition="len $StatName004">
+		<variable name="Name" sysvar="Name004" type="string" sample="%%StatName004%%"/>
+		<variable name="Current Temp" sysvar="CurTemp004" type="integer" min="-200" max="1200" sample="720" format="F:10:%.1f" buttontag="Stat Temp In"/>
+		<variable name="Current Setpoint" sysvar="CurSetpoint004" min="0" max="1000" sample="680" type="integer" format="F:10:%.1f" buttontag="Stat Setpoint"/>
+		<variable name="Heat Setpoint" sysvar="HeatSetpoint004" min="0" max="1000" sample="680" type="integer" format="F:10:%.1f" buttontag="Stat Heat Setpoint"/>
+		<variable name="Cool Setpoint" sysvar="CoolSetpoint004" min="0" max="1000" sample="730" type="integer" format="F:10:%.1f" buttontag="Stat Cool Setpoint"/>
+		<variable name="Operating Mode" sysvar="OPMode004" type="integer" sample="0" format="L:0:Off:1:Heat:2:Cool:3:Auto" buttontag="Stat Mode"/>
+			<variable name="Operating Mode Off" sysvar="OPMode004_00" type="boolean" sample="true" format="B::Off" buttontag="Stat Off"/>
+			<variable name="Operating Mode Heat" sysvar="OPMode004_01" type="boolean" sample="true" format="B::Heat" buttontag="Stat Heat"/>
+			<variable name="Operating Mode Cool" sysvar="OPMode004_02" type="boolean" sample="true" format="B::Cool" buttontag="Stat Cool"/>
+			<variable name="Operating Mode Auto" sysvar="OPMode004_03" type="boolean" sample="true" format="B::Auto" buttontag="Stat Auto"/>
+		<variable name="Operating State" sysvar="OPState004" type="integer" sample="0" format="L:0:Idle:1:Heating:2:Cooling" buttontag="Stat Operating State"/>
+			<variable name="Operating State Idle" sysvar="OPState004_00" type="boolean" sample="true" format="B::Idle"/>
+			<variable name="Operating State Heating" sysvar="OPState004_01" type="boolean" sample="true" format="B::Heating"/>
+			<variable name="Operating State Cooling" sysvar="OPState004_02" type="boolean" sample="true" format="B::Cooling"/>
+		<variable name="Fan Mode" sysvar="FanMode004" type="integer" sample="0" format="L:0:Auto:1:On" buttontag="Stat Fan Mode"/>
+			<variable name="Fan Mode Auto" sysvar="FanMode004_00" type="boolean" sample="true" format="B::Auto" buttontag="Stat Fan Auto"/>
+			<variable name="Fan Mode On" sysvar="FanMode004_01" type="boolean" sample="true" format="B::On" buttontag="Stat Fan On"/>
+		<variable name="Fan State" sysvar="FanState004" type="integer" sample="0" format="L:0:Off:1:On" buttontag="Stat Fan State"/>
+			<variable name="Fan State Off" sysvar="FanState004_00" type="boolean" sample="true" format="B::Off"/>
+			<variable name="Fan State On" sysvar="FanState004_01" type="boolean" sample="true" format="B::On"/>
+		<variable name="Temp Scale" sysvar="TempScale004" type="integer" sample="0" format="L:0:Fahrenheit:1:Celsius"/>
+			<variable name="Temp Scale Fahrenheit" sysvar="TempScale004_00" type="boolean" sample="true" format="B::Fahrenheit"/>
+			<variable name="Temp Scale Celsius" sysvar="TempScale004_01" type="boolean" sample="true" format="B::Celsius"/>
+		<variable name="Initialization State" sysvar="InitializeState004" type="integer" sample="0" format="L:0:Not Initialized:1:Initialized:2:Initializing"/>
+			<variable name="Not Initialized" sysvar="InitializeState004_00" type="boolean" sample="true" format="B::Not Initialized"/>
+			<variable name="Initialized" sysvar="InitializeState004_01" type="boolean" sample="true" format="B::Initialized"/>
+			<variable name="Initializing" sysvar="InitializeState004_02" type="boolean" sample="true" format="B::Initializing"/>
+	</category>
+
+<!-- Thermostat 5 Variables ////////////////////////////////////////////////////////// !-->
+<!-- ///////////////////////////////////////////////////////////////////////////////// !-->
+<!-- ///////////////////////////////////////////////////////////////////////////////// !-->
+	<category name="%%StatName005%% (Stat 5) Variables" sourceid="Stat5" condition="len $StatName005">
+		<variable name="Name" sysvar="Name005" type="string" sample="%%StatName005%%"/>
+		<variable name="Current Temp" sysvar="CurTemp005" type="integer" min="-200" max="1200" sample="720" format="F:10:%.1f" buttontag="Stat Temp In"/>
+		<variable name="Current Setpoint" sysvar="CurSetpoint005" min="0" max="1000" sample="680" type="integer" format="F:10:%.1f" buttontag="Stat Setpoint"/>
+		<variable name="Heat Setpoint" sysvar="HeatSetpoint005" min="0" max="1000" sample="680" type="integer" format="F:10:%.1f" buttontag="Stat Heat Setpoint"/>
+		<variable name="Cool Setpoint" sysvar="CoolSetpoint005" min="0" max="1000" sample="730" type="integer" format="F:10:%.1f" buttontag="Stat Cool Setpoint"/>
+		<variable name="Operating Mode" sysvar="OPMode005" type="integer" sample="0" format="L:0:Off:1:Heat:2:Cool:3:Auto" buttontag="Stat Mode"/>
+			<variable name="Operating Mode Off" sysvar="OPMode005_00" type="boolean" sample="true" format="B::Off" buttontag="Stat Off"/>
+			<variable name="Operating Mode Heat" sysvar="OPMode005_01" type="boolean" sample="true" format="B::Heat" buttontag="Stat Heat"/>
+			<variable name="Operating Mode Cool" sysvar="OPMode005_02" type="boolean" sample="true" format="B::Cool" buttontag="Stat Cool"/>
+			<variable name="Operating Mode Auto" sysvar="OPMode005_03" type="boolean" sample="true" format="B::Auto" buttontag="Stat Auto"/>
+		<variable name="Operating State" sysvar="OPState005" type="integer" sample="0" format="L:0:Idle:1:Heating:2:Cooling" buttontag="Stat Operating State"/>
+			<variable name="Operating State Idle" sysvar="OPState005_00" type="boolean" sample="true" format="B::Idle"/>
+			<variable name="Operating State Heating" sysvar="OPState005_01" type="boolean" sample="true" format="B::Heating"/>
+			<variable name="Operating State Cooling" sysvar="OPState005_02" type="boolean" sample="true" format="B::Cooling"/>
+		<variable name="Fan Mode" sysvar="FanMode005" type="integer" sample="0" format="L:0:Auto:1:On" buttontag="Stat Fan Mode"/>
+			<variable name="Fan Mode Auto" sysvar="FanMode005_00" type="boolean" sample="true" format="B::Auto" buttontag="Stat Fan Auto"/>
+			<variable name="Fan Mode On" sysvar="FanMode005_01" type="boolean" sample="true" format="B::On" buttontag="Stat Fan On"/>
+		<variable name="Fan State" sysvar="FanState005" type="integer" sample="0" format="L:0:Off:1:On" buttontag="Stat Fan State"/>
+			<variable name="Fan State Off" sysvar="FanState005_00" type="boolean" sample="true" format="B::Off"/>
+			<variable name="Fan State On" sysvar="FanState005_01" type="boolean" sample="true" format="B::On"/>
+		<variable name="Temp Scale" sysvar="TempScale005" type="integer" sample="0" format="L:0:Fahrenheit:1:Celsius"/>
+			<variable name="Temp Scale Fahrenheit" sysvar="TempScale005_00" type="boolean" sample="true" format="B::Fahrenheit"/>
+			<variable name="Temp Scale Celsius" sysvar="TempScale005_01" type="boolean" sample="true" format="B::Celsius"/>
+		<variable name="Initialization State" sysvar="InitializeState005" type="integer" sample="0" format="L:0:Not Initialized:1:Initialized:2:Initializing"/>
+			<variable name="Not Initialized" sysvar="InitializeState005_00" type="boolean" sample="true" format="B::Not Initialized"/>
+			<variable name="Initialized" sysvar="InitializeState005_01" type="boolean" sample="true" format="B::Initialized"/>
+			<variable name="Initializing" sysvar="InitializeState005_02" type="boolean" sample="true" format="B::Initializing"/>
+	</category>
+
+<!-- Thermostat 6 Variables ////////////////////////////////////////////////////////// !-->
+<!-- ///////////////////////////////////////////////////////////////////////////////// !-->
+<!-- ///////////////////////////////////////////////////////////////////////////////// !-->
+	<category name="%%StatName006%% (Stat 6) Variables" sourceid="Stat6" condition="len $StatName006">
+		<variable name="Name" sysvar="Name006" type="string" sample="%%StatName006%%"/>
+		<variable name="Current Temp" sysvar="CurTemp006" type="integer" min="-200" max="1200" sample="720" format="F:10:%.1f" buttontag="Stat Temp In"/>
+		<variable name="Current Setpoint" sysvar="CurSetpoint006" min="0" max="1000" sample="680" type="integer" format="F:10:%.1f" buttontag="Stat Setpoint"/>
+		<variable name="Heat Setpoint" sysvar="HeatSetpoint006" min="0" max="1000" sample="680" type="integer" format="F:10:%.1f" buttontag="Stat Heat Setpoint"/>
+		<variable name="Cool Setpoint" sysvar="CoolSetpoint006" min="0" max="1000" sample="730" type="integer" format="F:10:%.1f" buttontag="Stat Cool Setpoint"/>
+		<variable name="Operating Mode" sysvar="OPMode006" type="integer" sample="0" format="L:0:Off:1:Heat:2:Cool:3:Auto" buttontag="Stat Mode"/>
+			<variable name="Operating Mode Off" sysvar="OPMode006_00" type="boolean" sample="true" format="B::Off" buttontag="Stat Off"/>
+			<variable name="Operating Mode Heat" sysvar="OPMode006_01" type="boolean" sample="true" format="B::Heat" buttontag="Stat Heat"/>
+			<variable name="Operating Mode Cool" sysvar="OPMode006_02" type="boolean" sample="true" format="B::Cool" buttontag="Stat Cool"/>
+			<variable name="Operating Mode Auto" sysvar="OPMode006_03" type="boolean" sample="true" format="B::Auto" buttontag="Stat Auto"/>
+		<variable name="Operating State" sysvar="OPState006" type="integer" sample="0" format="L:0:Idle:1:Heating:2:Cooling" buttontag="Stat Operating State"/>
+			<variable name="Operating State Idle" sysvar="OPState006_00" type="boolean" sample="true" format="B::Idle"/>
+			<variable name="Operating State Heating" sysvar="OPState006_01" type="boolean" sample="true" format="B::Heating"/>
+			<variable name="Operating State Cooling" sysvar="OPState006_02" type="boolean" sample="true" format="B::Cooling"/>
+		<variable name="Fan Mode" sysvar="FanMode006" type="integer" sample="0" format="L:0:Auto:1:On" buttontag="Stat Fan Mode"/>
+			<variable name="Fan Mode Auto" sysvar="FanMode006_00" type="boolean" sample="true" format="B::Auto" buttontag="Stat Fan Auto"/>
+			<variable name="Fan Mode On" sysvar="FanMode006_01" type="boolean" sample="true" format="B::On" buttontag="Stat Fan On"/>
+		<variable name="Fan State" sysvar="FanState006" type="integer" sample="0" format="L:0:Off:1:On" buttontag="Stat Fan State"/>
+			<variable name="Fan State Off" sysvar="FanState006_00" type="boolean" sample="true" format="B::Off"/>
+			<variable name="Fan State On" sysvar="FanState006_01" type="boolean" sample="true" format="B::On"/>
+		<variable name="Temp Scale" sysvar="TempScale006" type="integer" sample="0" format="L:0:Fahrenheit:1:Celsius"/>
+			<variable name="Temp Scale Fahrenheit" sysvar="TempScale006_00" type="boolean" sample="true" format="B::Fahrenheit"/>
+			<variable name="Temp Scale Celsius" sysvar="TempScale006_01" type="boolean" sample="true" format="B::Celsius"/>
+		<variable name="Initialization State" sysvar="InitializeState006" type="integer" sample="0" format="L:0:Not Initialized:1:Initialized:2:Initializing"/>
+			<variable name="Not Initialized" sysvar="InitializeState006_00" type="boolean" sample="true" format="B::Not Initialized"/>
+			<variable name="Initialized" sysvar="InitializeState006_01" type="boolean" sample="true" format="B::Initialized"/>
+			<variable name="Initializing" sysvar="InitializeState006_02" type="boolean" sample="true" format="B::Initializing"/>
+	</category>
+
+</variables>
